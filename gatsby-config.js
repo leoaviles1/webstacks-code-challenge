@@ -7,8 +7,8 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: "CFPAT-KoCZTaRV6B1G-KT3jY1amyoFt2bLjjrwCm4kcTvfOe0",
-        spaceId: "z7cqx2r6ha8l",
+        accessToken: "LomczeN7A_Xh2IGVVvGJCnGslnxEuw-6l1mGtK6wBP8",
+        spaceId: "bcgm74xn6v0u",
       },
     },
     "gatsby-plugin-styled-components",
@@ -16,6 +16,7 @@ module.exports = {
     "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-filesystem",
       options: {
