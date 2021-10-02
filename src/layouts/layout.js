@@ -1,33 +1,22 @@
 import * as React from "react";
 import { ThemeProvider } from "styled-components";
-import Header from "../components/Header";
-import { Container } from "../components/styles/Container.styled";
+import { theme } from "../components/styles/Theme";
 import GlobalStyles from "../components/styles/Global";
-
-const theme = {
-  colors: {
-    header: "#ebfbff",
-    white: "#fff",
-    footer: "#003333",
-    cPrimary: "#2885F6",
-    cSecondary: "#767D84",
-  },
-};
+import Header from "../components/Header";
+import Hero from "../components/Hero";
 
 export default function Layout({ pageTitle, pageHeading, children }) {
   return (
     <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyles />
+      <GlobalStyles />
+      <div className='Wrapper'>
         <Header />
-        <Container>
-          <h1>Hello World</h1>
-        </Container>
+        <Hero />
 
         <title>{pageTitle} Page</title>
         <h1>{pageHeading}</h1>
         {children}
-      </>
+      </div>
     </ThemeProvider>
   );
 }

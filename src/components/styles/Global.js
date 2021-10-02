@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 
 html {
@@ -9,6 +9,7 @@ html {
 }
 
 *{
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -39,17 +40,22 @@ p{
 }
 
 a {
+  color: ${({ theme }) => theme.colors.white};
+  font-size: 1.44rem;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: .5px;
 	transition: color .3s linear, background-color .3s linear, border-color .3s linear;
-  background-color: ${({ theme }) => theme.colors.cPrimary};
-	color: ${({ theme }) => theme.colors.white};
+  text-decoration: none;
+
   
 
 	&:hover,
 	&:active,
 	&:focus,
 	.active > & {
-    background-color: ${({ theme }) => theme.colors.cSecondary};
-		
+		color: ${({ theme }) => theme.colors.white};
+
 	}
 }
 
@@ -57,10 +63,10 @@ img {
   max-width: 100%;
 }
 
+/* @media screen and (min-width: ){}
 @media screen and (min-width: ){}
 @media screen and (min-width: ){}
-@media screen and (min-width: ){}
-@media screen and (min-width: ){}
+@media screen and (min-width: ){} */
 
 
 `;
