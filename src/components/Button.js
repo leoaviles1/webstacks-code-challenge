@@ -4,7 +4,7 @@ import { StyledButton } from "./styles/Button.styled";
 
 export default function SiteButton({ pageLink, pageTitle, children }) {
   return (
-    <StyledButton class='btn'>
+    <StyledButton className='btn'>
       <Link to={pageLink} title={pageTitle}>
         {children}
       </Link>
