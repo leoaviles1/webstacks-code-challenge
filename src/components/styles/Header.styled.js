@@ -6,7 +6,7 @@ export const StyledHeader = styled.header`
   position: fixed;
   width: 100%;
   background: 0;
-  z-index: 1000;
+  z-index: 10;
 `;
 
 export const Nav = styled.nav`
@@ -14,6 +14,11 @@ export const Nav = styled.nav`
   align-items: center;
   justify-content: space-between;
   height: 11.2rem;
+
+  .site-logo {
+    position: relative;
+    z-index: 11;
+  }
 
   .action-items {
     display: none;
@@ -48,4 +53,5 @@ export const Logo = styled.img`
   width: 100%;
   height: 100%;
   max-width: 12.4rem;
+  z-index: 99;
 `;

@@ -4,6 +4,7 @@ import { StyledHeader, Nav, Logo } from "./styles/Header.styled";
 import { StaticQuery, graphql } from "gatsby";
 import SiteButton from "../components/Button";
 import { MaxWidthContainer } from "./styles/MaxWidthContainer.styled";
+import MobileMenu from "../components/MobileMenu";
 
 export default function Header() {
   return (
@@ -28,9 +29,10 @@ export default function Header() {
         <>
           {data.allContentfulLogos.edges.map(({ node }) => (
             <StyledHeader key={node.logoId}>
+              <MobileMenu />
               <MaxWidthContainer>
                 <Nav>
-                  <Link to='/' title='Home'>
+                  <Link className='site-logo' to='/' title='Home'>
                     <Logo src={node.logoImage.file.url} alt='Home' />
                   </Link>
                   <ul className='action-items'>

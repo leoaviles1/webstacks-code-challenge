@@ -16,7 +16,6 @@ export const HeroContainer = styled.div`
 
   .content-wrapper {
     position: relative;
-    z-index: 99;
     padding-top: 14rem;
   }
 
@@ -24,7 +23,7 @@ export const HeroContainer = styled.div`
     text-align: center;
     margin-bottom: 3rem;
 
-    ${respondTo.lg`
+    ${respondTo.xl`
       text-align: left;
     `}
 
@@ -43,7 +42,7 @@ export const HeroContainer = styled.div`
         max-width: 42rem;
       `}
 
-      ${respondTo.lg`
+      ${respondTo.xl`
         margin-left: 0;
         margin-right: 0;
       `}
@@ -55,7 +54,7 @@ export const HeroContainer = styled.div`
     flex-wrap: wrap;
     justify-content: center;
 
-    ${respondTo.lg`
+    ${respondTo.xl`
       justify-content: flex-start;
     `}
 

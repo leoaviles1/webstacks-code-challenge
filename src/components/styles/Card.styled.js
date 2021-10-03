@@ -10,6 +10,10 @@ export const StyledCard = styled.div`
   margin: 0 1rem 6rem;
   max-width: 37rem;
 
+  ${respondTo.xl`
+    margin: 0 0 6rem;
+  `}
+
   .card-img {
     width: 12rem;
     height: 12rem;
@@ -43,6 +47,14 @@ export const StyledCard = styled.div`
       `}
 
       ${respondTo.lg`
+        right: -6.8rem;
+      `}
+
+      ${respondTo.xl`
+        right: -5.4rem;
+      `}
+
+      ${respondTo.xxl`
         right: -6.8rem;
       `}
     }

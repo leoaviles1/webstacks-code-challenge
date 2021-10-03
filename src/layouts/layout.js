@@ -15,10 +15,6 @@ export default function Layout({ pageTitle, pageHeading, children }) {
         <section id='#hero'>
           <Hero />
         </section>
-
-        {/* <title>{pageTitle} Page</title>
-        <h1>{pageHeading}</h1>
-        {children} */}
       </Wrapper>
     </ThemeProvider>
   );
