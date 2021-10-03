@@ -28,7 +28,7 @@ export default function Header() {
                 Sign In
               </Link>
             </li>
-            <SiteButton pageLink='/about' pageTitle='Get Started' className='get-started'>
+            <SiteButton pageLink='/about' pageTitle='Get Started' customClass='get-started'>
               Get Started
             </SiteButton>
           </ul>

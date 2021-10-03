@@ -4,7 +4,6 @@ import { respondTo } from "./Responsive";
 export const StyledHeader = styled.header`
   display: block;
   position: fixed;
-  /* top: 0; */
   width: 100%;
   background: 0;
   z-index: 1000;
@@ -31,7 +30,7 @@ export const Nav = styled.nav`
 
   .nav-link {
     color: ${({ theme }) => theme.colors.white};
-    padding: 1.1rem 1.6rem;
+    margin: 0 1.6rem;
 
     &:hover {
       color: ${({ theme }) => theme.colors.cPrimary};

@@ -13,9 +13,9 @@ export default function Layout({ pageTitle, pageHeading, children }) {
         <Header />
         <Hero />
 
-        <title>{pageTitle} Page</title>
+        {/* <title>{pageTitle} Page</title>
         <h1>{pageHeading}</h1>
-        {children}
+        {children} */}
       </div>
     </ThemeProvider>
   );

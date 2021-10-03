@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { respondTo } from "./Responsive";
 
 const GlobalStyles = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -14,6 +15,7 @@ html {
 }
 
 body{
+  color: ${({ theme }) => theme.colors.black};
   background: ${({ theme }) => theme.colors.white};
   font-size: 1.6rem;
   line-height: 2rem;
@@ -21,22 +23,57 @@ body{
 }
 
 h1{
-  font-size: 5.6rem;
+  font-size: 4rem;
+  line-height: 4.8rem;
+  margin-bottom: 2.8rem;
+
+  ${respondTo.md`
+    font-size: 5rem;
+    line-height: 5.8rem;
+  `}
+
+  ${respondTo.lg`
+    font-size: 5.6rem;
+    line-height: 6.8rem;
+  `}
 }
 
 h2{
   font-size: 1.8rem;
 }
 
-h3{
-
-}
 h5{
-  
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+
+  ${respondTo.sm`
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
+
+  `}
+
+  ${respondTo.lg`
+    font-size: 1.8rem;
+    line-height: 22px;
+    margin-bottom: 3rem;
+  `}
 }
 
 p{
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 2.2rem;
   margin: 0 0 2rem;
+
+  ${respondTo.md`
+    font-size: 1.6rem;
+  `}
+
+  ${respondTo.md`
+    font-size: 1.8rem;
+  `}
+
 	&:last-child {
 		margin-bottom: 0;
 	}
@@ -65,13 +102,6 @@ a {
 img {
   max-width: 100%;
 }
-
-/* @media screen and (min-width: ){}
-@media screen and (min-width: ){}
-@media screen and (min-width: ){}
-@media screen and (min-width: ){} */
-
-
 `;
 
 export default GlobalStyles;

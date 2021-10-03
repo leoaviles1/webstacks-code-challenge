@@ -13,9 +13,10 @@ export default function Hero() {
           allContentfulHero {
             edges {
               node {
+                heroId
+                heroTitle
                 heroHeading
                 heroSubheading
-                heroTitle
                 heroBackground {
                   fluid {
                     src
@@ -28,28 +29,29 @@ export default function Hero() {
       `}
       render={(data) => (
         <>
-          {data.allContentfulHero.edges.map(({ node, index }) => (
-            <HeroContainer>
-              <img key='index' src={node.heroBackground.fluid.src} alt='Hero'></img>
+          {data.allContentfulHero.edges.map(({ node }) => (
+            <HeroContainer key={node.heroId}>
+              <div className='bgDiv' style={{ backgroundImage: `url( "${node.heroBackground.fluid.src}" )` }}>
+                <MaxWidthContainer className='content-wrapper'>
+                  <div className='hero-content'>
+                    <h5>{node.heroTitle}</h5>
+                    <h1>{node.heroHeading}</h1>
+                    <p>{node.heroSubheading}</p>
+                  </div>
+                  <div className='button-wrap'>
+                    <SiteButton pageLink='/about' pageTitle='Get Started' customClass='get-started'>
+                      Get Started
+                    </SiteButton>
+                    <SiteButton pageLink='/' pageTitle='Request a demo'>
+                      Request a Demo
+                    </SiteButton>
+                  </div>
 
-              <MaxWidthContainer className='content-wrapper'>
-                <div key={index} className='hero-content'>
-                  <h5 key={index}>{node.heroTitle}</h5>
-                  <h1 key={index}>{node.heroHeading}</h1>
-                  <p key={index}>{node.heroSubheading}</p>
-                </div>
-
-                <SiteButton pageLink='/about' pageTitle='Get Started'>
-                  Get Started
-                </SiteButton>
-                <SiteButton pageLink='/' pageTitle='Request a demo'>
-                  Request a Demo
-                </SiteButton>
-
-                <ul>
-                  <Card />
-                </ul>
-              </MaxWidthContainer>
+                  <ul>
+                    <Card />
+                  </ul>
+                </MaxWidthContainer>
+              </div>
             </HeroContainer>
           ))}
         </>

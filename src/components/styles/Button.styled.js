@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledButton = styled.button`
+  height: 4rem;
   border-radius: 0.3rem;
   border: none;
   cursor: pointer;

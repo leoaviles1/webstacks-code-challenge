@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import img from "/Users/leoaviles/Desktop/Leo/code-challenges/webstacks-code-challenge/public/images/hero-background@2x.png";
+
 import { respondTo } from "./Responsive";
 
 export const HeroContainer = styled.div`
@@ -9,32 +9,61 @@ export const HeroContainer = styled.div`
   .bgDiv {
     width: 100%;
     height: 100%;
-    background-image: url(${img});
     background-size: cover;
     background-position: 75% center;
     background-repeat: no-repeat;
     position: relative;
-
-    &:after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: auto;
-      right: auto;
-      bottom: auto;
-      background: linear-gradient(360deg, #000000 13.96%, rgba(0, 0, 0, 0) 107.34%);
-    }
-
-    ${respondTo.lg`
-    background-position: center 0%;
-  `}
   }
 
   .content-wrapper {
     position: relative;
     z-index: 99;
-    padding-top: 11.2rem;
+    padding-top: 14rem;
+  }
+
+  .hero-content {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    ${respondTo.lg`
+      text-align: left;
+    `}
+
+    h1,
+    h5,
+    p {
+      color: ${({ theme }) => theme.colors.white};
+    }
+
+    h1 {
+      max-width: 30rem;
+      margin-left: auto;
+      margin-right: auto;
+
+      ${respondTo.md`
+        max-width: 37.5rem;
+      `}
+
+      ${respondTo.lg`
+        max-width: 42rem;
+        margin-left: 0;
+        margin-right: 0;
+      `}
+    }
+  }
+
+  .button-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    ${respondTo.lg`
+    justify-content: flex-start;
+    `}
+
+    Button {
+      margin-bottom: 2rem;
+      margin-right: 2.1rem;
+    }
   }
 `;
