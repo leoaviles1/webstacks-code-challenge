@@ -89,10 +89,10 @@ export const StyledCard = styled.div`
     padding: 0 1.4rem 0 0;
 
     &:after {
+      top: 47%;
       right: 0;
-      border-bottom: 0.2rem solid ${({ theme }) => theme.colors.orange};
-      border-right: 0.2rem solid ${({ theme }) => theme.colors.orange};
-      transition: border-color 0.3s linear;
+      background-image: url("data:image/svg+xml,%3Csvg fill='none' height='10' viewBox='0 0 7 10' width='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m1 9 4-4-4-4' stroke='%23F65928' stroke-width='2'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
     }
 
     &:hover {
@@ -104,8 +104,7 @@ export const StyledCard = styled.div`
       }
 
       &:after {
-        border-bottom: 0.2rem solid ${({ theme }) => theme.colors.cSecondary};
-        border-right: 0.2rem solid ${({ theme }) => theme.colors.cSecondary};
+        background-image: url("data:image/svg+xml,%3Csvg fill='none' height='10' viewBox='0 0 7 10' width='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m1 9 4-4-4-4' stroke='%23767D84' stroke-width='2'/%3E%3C/svg%3E");
       }
     }
 
