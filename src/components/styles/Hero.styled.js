@@ -1,18 +1,17 @@
 import styled from "styled-components";
-
 import { respondTo } from "./Responsive";
 
 export const HeroContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
+  background-color: #000;
 
-  .bgDiv {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
+  .bg-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .hero-bg {
     background-position: 75% center;
-    background-repeat: no-repeat;
-    position: relative;
   }
 
   .content-wrapper {
@@ -41,11 +40,10 @@ export const HeroContainer = styled.div`
       margin-right: auto;
 
       ${respondTo.md`
-        max-width: 37.5rem;
+        max-width: 42rem;
       `}
 
       ${respondTo.lg`
-        max-width: 42rem;
         margin-left: 0;
         margin-right: 0;
       `}
@@ -58,12 +56,38 @@ export const HeroContainer = styled.div`
     justify-content: center;
 
     ${respondTo.lg`
-    justify-content: flex-start;
+      justify-content: flex-start;
     `}
 
     Button {
       margin-bottom: 2rem;
       margin-right: 2.1rem;
     }
+
+    .inverted {
+      background-color: ${({ theme }) => theme.colors.cSecondary};
+
+      &:hover {
+        background-color: ${({ theme }) => theme.colors.cPrimary};
+      }
+    }
+  }
+
+  .card-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin-top: 9.2rem;
+
+    ${respondTo.lg`
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    `}
+
+    ${respondTo.xl`
+      justify-content: space-between    
+    `}
   }
 `;

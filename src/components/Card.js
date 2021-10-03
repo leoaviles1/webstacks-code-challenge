@@ -1,5 +1,7 @@
 import * as React from "react";
 import { StaticQuery, graphql } from "gatsby";
+import { StyledCard } from "./styles/Card.styled";
+import SiteButton from "../components/Button";
 
 export default function Card() {
   return (
@@ -25,11 +27,18 @@ export default function Card() {
       render={(data) => (
         <>
           {data.allContentfulCardsCopy.edges.map(({ node }) => (
-            <div key={node.cardId} className='card-wrapper'>
-              <img src={node.cardImage.fluid.src} alt='Card icon'></img>
-              <h1>{node.cardTitle}</h1>
-              <h5>{node.cardCopy}</h5>
-            </div>
+            <StyledCard key={node.cardId} className={`card-wrapper card-${node.cardId}`}>
+              <div
+                className={`card-img bgDiv card-img-${node.cardId}`}
+                style={{ backgroundImage: `url( "${node.cardImage.fluid.src}" )` }}></div>
+              <div className='copy-wrapper'>
+                <h5 className='title'>{node.cardTitle}</h5>
+                <div className='snippet'>{node.cardCopy}</div>
+                <SiteButton pageLink='/' pageTitle='Learn More' customClass='card-btn'>
+                  Learn more
+                </SiteButton>
+              </div>
+            </StyledCard>
           ))}
         </>
       )}

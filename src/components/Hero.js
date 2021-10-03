@@ -31,27 +31,32 @@ export default function Hero() {
         <>
           {data.allContentfulHero.edges.map(({ node }) => (
             <HeroContainer key={node.heroId}>
-              <div className='bgDiv' style={{ backgroundImage: `url( "${node.heroBackground.fluid.src}" )` }}>
-                <MaxWidthContainer className='content-wrapper'>
-                  <div className='hero-content'>
-                    <h5>{node.heroTitle}</h5>
-                    <h1>{node.heroHeading}</h1>
-                    <p>{node.heroSubheading}</p>
-                  </div>
-                  <div className='button-wrap'>
-                    <SiteButton pageLink='/about' pageTitle='Get Started' customClass='get-started'>
-                      Get Started
-                    </SiteButton>
-                    <SiteButton pageLink='/' pageTitle='Request a demo'>
-                      Request a Demo
-                    </SiteButton>
-                  </div>
-
-                  <ul>
-                    <Card />
-                  </ul>
-                </MaxWidthContainer>
+              <div className='bg-container'>
+                <div
+                  className='bgDiv hero-bg'
+                  style={{ backgroundImage: `url( "${node.heroBackground.fluid.src}" )` }}></div>
               </div>
+
+              <MaxWidthContainer className='content-wrapper'>
+                <div className='hero-content'>
+                  <h5>{node.heroTitle}</h5>
+                  <h1>{node.heroHeading}</h1>
+                  <p>{node.heroSubheading}</p>
+                </div>
+
+                <div className='button-wrap'>
+                  <SiteButton pageLink='/about' pageTitle='Get Started'>
+                    Get Started
+                  </SiteButton>
+                  <SiteButton pageLink='/' pageTitle='Request a demo' customClass='inverted'>
+                    Request a Demo
+                  </SiteButton>
+                </div>
+
+                <ul className='card-list'>
+                  <Card />
+                </ul>
+              </MaxWidthContainer>
             </HeroContainer>
           ))}
         </>

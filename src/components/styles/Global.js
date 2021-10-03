@@ -28,11 +28,6 @@ h1{
   margin-bottom: 2.8rem;
 
   ${respondTo.md`
-    font-size: 5rem;
-    line-height: 5.8rem;
-  `}
-
-  ${respondTo.lg`
     font-size: 5.6rem;
     line-height: 6.8rem;
   `}
@@ -47,13 +42,7 @@ h5{
   font-weight: 600;
   margin-bottom: 2rem;
 
-  ${respondTo.sm`
-    font-size: 1.6rem;
-    margin-bottom: 2.5rem;
-
-  `}
-
-  ${respondTo.lg`
+  ${respondTo.md`
     font-size: 1.8rem;
     line-height: 22px;
     margin-bottom: 3rem;
@@ -65,10 +54,6 @@ p{
   font-weight: 300;
   line-height: 2.2rem;
   margin: 0 0 2rem;
-
-  ${respondTo.md`
-    font-size: 1.6rem;
-  `}
 
   ${respondTo.md`
     font-size: 1.8rem;
@@ -95,13 +80,21 @@ a {
 	&:focus,
 	.active > & {
 		color: ${({ theme }) => theme.colors.white};
-
 	}
 }
 
 img {
   max-width: 100%;
 }
+
+.bgDiv {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
 `;
 
 export default GlobalStyles;

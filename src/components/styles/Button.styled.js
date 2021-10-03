@@ -12,7 +12,7 @@ export const StyledButton = styled.button`
   padding: 1.1rem 3.6rem 1.1rem 2.4rem;
   background-color: ${({ theme }) => theme.colors.cPrimary};
   color: ${({ theme }) => theme.colors.white};
-  transition: color 0.3s linear, background-color 0.3s linear, border-color 0.3s linear;
+  transition: color 0.3s linear, background-color 0.3s linear, border-color 0.3s linear, transform 0.2s linear;
   position: relative;
 
   &:after {
@@ -22,7 +22,7 @@ export const StyledButton = styled.button`
     height: 0.5rem;
     top: 47%;
     left: auto;
-    right: 1.7rem;
+    right: 2.1rem;
     bottom: auto;
     border-bottom: 0.2rem solid ${({ theme }) => theme.colors.white};
     border-right: 0.2rem solid ${({ theme }) => theme.colors.white};
@@ -32,5 +32,9 @@ export const StyledButton = styled.button`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.cSecondary};
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 `;

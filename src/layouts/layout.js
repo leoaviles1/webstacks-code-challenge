@@ -1,6 +1,7 @@
 import * as React from "react";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../components/styles/Theme";
+import Wrapper from "../components/Wrapper";
 import GlobalStyles from "../components/styles/Global";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -9,14 +10,16 @@ export default function Layout({ pageTitle, pageHeading, children }) {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <div className='Wrapper'>
+      <Wrapper className='Wrapper'>
         <Header />
-        <Hero />
+        <section id='#hero'>
+          <Hero />
+        </section>
 
         {/* <title>{pageTitle} Page</title>
         <h1>{pageHeading}</h1>
         {children} */}
-      </div>
+      </Wrapper>
     </ThemeProvider>
   );
 }

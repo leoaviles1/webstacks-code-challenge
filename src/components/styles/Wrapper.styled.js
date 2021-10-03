@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-export const WrapperStyled = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
+export const StyledWrapper = styled.div`
+  overflow-x: hidden;
 `;
